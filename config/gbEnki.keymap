@@ -3,6 +3,7 @@
 #include <dt-bindings/zmk/ext_power.h>
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/outputs.h>
+#include <dt-bindings/zmk/pointing.h>
 
 #define DEF 0
 #define LWR 1
@@ -28,18 +29,18 @@
 
         default_layer {
             bindings = <
-&kp LBKT               &kp Q  &kp W  &kp E        &kp R            &kp T          &kp Y        &kp U           &kp I        &kp O    &kp P     &kp RBKT
-&hr LEFT_SHIFT GRAVE   &kp A  &kp S  &kp D        &kp F            &kp G          &kp H        &kp J           &kp K        &kp L    &kp SEMI  &hr LEFT_ALT SQT
-&hr LEFT_CONTROL BSLH  &kp Z  &kp X  &kp C        &kp V            &kp B          &kp N        &kp M           &kp COMMA    &kp DOT  &kp FSLH  &kp LG(SPACE)
-                                     &lt RSE TAB  &mt LSHFT SPACE  &lt LWR RET    &lt LWR ESC  &mt RSHFT BSPC  &lt RSE DEL
+&kp LBKT                &kp Q  &kp W  &kp E        &kp R            &kp T          &kp Y        &kp U                &kp I        &kp O    &kp P     &kp RBKT
+&hr LEFT_CONTROL GRAVE  &kp A  &kp S  &kp D        &kp F            &kp G          &kp H        &kp J                &kp K        &kp L    &kp SEMI  &hr LEFT_ALT SQT
+&hr LEFT_GUI BSLH       &kp Z  &kp X  &kp C        &kp V            &kp B          &kp N        &kp M                &kp COMMA    &kp DOT  &kp FSLH  &hr MINUS EQUAL
+                                      &lt RSE TAB  &mt LSHFT SPACE  &lt LWR RET    &lt LWR ESC  &mt LEFT_SHIFT BSPC  &lt RSE DEL
             >;
         };
 
         lower_layer {
             bindings = <
 &none  &kp LBRC   &kp N3  &kp N2        &kp N1  &kp ASTERISK     &none   &kp EXCL              &kp AT             &kp HASH             &kp RBRC  &none
-&none  &kp EQUAL  &kp N6  &kp NUMBER_5  &kp N4  &kp KP_DIVIDE    &none   &hr RIGHT_GUI DOLLAR  &hr RCTRL PERCENT  &hr RIGHT_ALT CARET  &none     &none
-&none  &kp MINUS  &kp N9  &kp N8        &kp N7  &kp N0           &none   &kp AMPS              &kp LPAR           &kp RPAR             &none     &none
+&none  &kp EQUAL  &kp N6  &kp NUMBER_5  &kp N4  &kp KP_DIVIDE    &none   &hr RIGHT_GUI DOLLAR  &hr RCTRL PERCENT  &hr RIGHT_ALT CARET  &none     &msc SCRL_UP
+&none  &kp MINUS  &kp N9  &kp N8        &kp N7  &kp N0           &none   &kp AMPS              &kp LPAR           &kp RPAR             &none     &msc SCRL_DOWN
                           &lt ADJ TAB   &trans  &trans           &trans  &trans                &lt ADJ DEL
             >;
         };
@@ -56,7 +57,7 @@
         adjust_layer {
             bindings = <
 &none           &sys_reset  &bootloader   &out OUT_TOG  &ext_power EP_TOG  &soft_off    &soft_off  &ext_power EP_TOG  &out OUT_TOG  &bootloader   &sys_reset    &none
-&bt BT_CLR_ALL  &bt BT_CLR  &bt BT_SEL 1  &bt BT_SEL 2  &none              &none        &none      &none              &bt BT_SEL 2  &bt BT_SEL 1  &bt BT_SEL 0  &bt BT_CLR
+&bt BT_CLR_ALL  &bt BT_CLR  &bt BT_SEL 1  &bt BT_SEL 0  &none              &none        &none      &bt BT_SEL 0       &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_CLR
 &none           &none       &none         &none         &none              &none        &none      &none              &none         &none         &none         &none
                                           &trans        &none              &trans       &trans     &none              &trans
             >;
